@@ -86,7 +86,7 @@ public class SachDaO {
 
 
     public boolean update(Sach sach){
-        String sql = "update tbl_sach s set s.ten = ? and s.tacgia = ? and s.id_the_loai = ? and s.id_nha_xuat_ban = ? and s.price = ? where s.id = ?";
+        String sql = "update tbl_sach set ten = ?, tacgia = ?, id_the_loai = ?, id_nha_xuat_ban = ?, price = ? where id = ?";
         int output =-1;
         try {
             PreparedStatement ps = DBConnect.getConnection().prepareStatement(sql);

@@ -52,7 +52,7 @@ public class SachController extends HttpServlet {
                 sachDaO.delete(Integer.parseInt(sach_id));
                 request.setAttribute("listsach",sachDaO.getALl());
                 rs = request.getRequestDispatcher("Sach/s_index.jsp");
-            break;
+                break;
             default:
                 request.setAttribute("listsach", sachDaO.getALl());
 
@@ -82,6 +82,7 @@ public class SachController extends HttpServlet {
                 Sach b1 = new Sach();
                 //todo lay thong tin tu request cap nhat vao doi tuong nhaXuatBan
                 String id = request.getParameter("id");
+                b1.setId(Integer.parseInt(id));
                 b1.setTen(request.getParameter("ten"));
                 b1.setTacgia(request.getParameter("tacgia"));
                 b1.setNxb_id(Integer.parseInt(request.getParameter("nxb_id")));
@@ -89,10 +90,7 @@ public class SachController extends HttpServlet {
                 b1.setGiaban(Float.parseFloat(request.getParameter("giaban")));
                 bookDao.update(b1);
                 break;
-            default:
-//TODO create bookDao.getAll();
-                request.setAttribute("listbooks", bookDao.getALl());
-                rs = request.getRequestDispatcher("Sach/s_index.jsp");
+
         }
         response.sendRedirect("Sach");
     }
