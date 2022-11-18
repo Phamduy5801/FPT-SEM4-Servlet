@@ -7,10 +7,12 @@ public class SachNhap {
 
     private int idSach;
 
+//    field nay khong tao trong db
     private String tenSach;
 
     private int idCuaHang;
 
+    //    field nay khong tao trong db
     private String tenCuahang;
 
     private int soLuong;
