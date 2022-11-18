@@ -44,6 +44,12 @@
             <li class="nav-item">
                 <a class="nav-link" href="Sach">Sach</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="CuaHang">Cua Hang</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="SachNhap">Nhap Sach</a>
+            </li>
         </ul>
     </div>
 </nav>
