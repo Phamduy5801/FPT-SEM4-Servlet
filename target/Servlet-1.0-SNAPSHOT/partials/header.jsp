@@ -50,8 +50,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="SachNhap">Nhap Sach</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Role">Role</a>
+            </li>
         </ul>
     </div>
+    <form action="LogoutController" class="form-control" method="post" style="float: right; width: 100px; height: auto; display: flex; justify-content: center">
+        <input type="submit" name="Submit" value="Logout">
+    </form>
 </nav>
 </body>
 </html>

@@ -18,29 +18,31 @@
 </style>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: black">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="hello-servlet">Hello Servlet</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="NhaXuatBan">NXB</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="TheLoaiSach">TLS</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<%--<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: black">--%>
+<%--    <a class="navbar-brand" href="#">Navbar</a>--%>
+<%--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">--%>
+<%--        <span class="navbar-toggler-icon"></span>--%>
+<%--    </button>--%>
+<%--    <div class="collapse navbar-collapse" id="navbarNav">--%>
+<%--        <ul class="navbar-nav">--%>
+<%--            <li class="nav-item active">--%>
+<%--                <a class="nav-link" href="hello-servlet">Hello Servlet</a>--%>
+<%--            </li>--%>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link" href="NhaXuatBan">NXB</a>--%>
+<%--            </li>--%>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link" href="TheLoaiSach">TLS</a>--%>
+<%--            </li>--%>
+<%--        </ul>--%>
+<%--    </div>--%>
+<%--</nav>--%>
+<%--<a href="register-form.jsp">Register</a>--%>
 <form action="LoginController" class="form-control" method="post">
-    <label>UserName</label>:<input type="text" class="form-control" name="username"><br/>
-    <label>Password</label>:<input type="text" class="form-control" name="password"><br/>
+    <label>UserName</label>:<input type="text" class="form-control" name="username" required><br/>
+    <label>Password</label>:<input type="text" class="form-control" name="password" required><br/>
     <input type="submit" name="Submit">
+    <a href="register-form.jsp">Register</a>
 </form>
 </body>
 </html>

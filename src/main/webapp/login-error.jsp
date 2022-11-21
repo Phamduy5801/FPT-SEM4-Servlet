@@ -12,5 +12,6 @@
 </head>
 <body>
 <h1>LOGIN FAIL</h1>
+<a href="index.jsp" style="text-decoration: none">Return to Login form</a>
 </body>
 </html>

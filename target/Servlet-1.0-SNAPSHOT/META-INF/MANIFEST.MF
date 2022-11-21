@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
-Built-By: vupham
-Build-Jdk: 1.8.0_345
+Built-By: Admin
+Build-Jdk: version 1.8.0_181
 
