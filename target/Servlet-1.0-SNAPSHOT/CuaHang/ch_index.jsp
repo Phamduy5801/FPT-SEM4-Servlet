@@ -39,6 +39,7 @@
                 <a href="CuaHang?method=detail&cuaHang_id=${ch.id}"><button  class="btn btn-info">Chi Tiet</button></a>
                 <a href="CuaHang?method=edit&cuaHang_id=${ch.id}"><button  class="btn btn-primary">Sua</button></a>
                 <a href="CuaHang?method=delete&cuaHang_id=${ch.id}" ><button class="btn btn-danger">Xoa</button></a>
+                <a href="CuaHang?method=sach&cuaHang_id=${ch.id}" ><button class="btn btn-success">Thong Tin Sach</button></a>
             </td>
         </tr>
     </c:forEach>

@@ -8,6 +8,13 @@ public class SachCuaHang {
 
     private int soLuong;
 
+    //    field nay khong tao trong db
+    private String tenCuahang;
+
+    //    field nay khong tao trong db
+    private String tenSach;
+
+
     public int getIdSach() {
         return idSach;
     }
@@ -32,10 +39,28 @@ public class SachCuaHang {
         this.soLuong = soLuong;
     }
 
-    public SachCuaHang(int idSach, int idCuaHang, int soLuong) {
+    public String getTenCuahang() {
+        return tenCuahang;
+    }
+
+    public void setTenCuahang(String tenCuahang) {
+        this.tenCuahang = tenCuahang;
+    }
+
+    public String getTenSach() {
+        return tenSach;
+    }
+
+    public void setTenSach(String tenSach) {
+        this.tenSach = tenSach;
+    }
+
+    public SachCuaHang(int idSach, int idCuaHang, int soLuong, String tenCuahang, String tenSach) {
         this.idSach = idSach;
         this.idCuaHang = idCuaHang;
         this.soLuong = soLuong;
+        this.tenCuahang = tenCuahang;
+        this.tenSach = tenSach;
     }
 
     public SachCuaHang() {

@@ -47,6 +47,10 @@ public class CuaHangController extends HttpServlet {
                 request.setAttribute("listch",cuaHangDAO.getALl());
                 rs = request.getRequestDispatcher("CuaHang/ch_index.jsp");
                 break;
+            case "sach":
+                request.setAttribute("listsch",cuaHangDAO.getThongTinSach(Integer.parseInt(cuaHang_id)));
+                rs = request.getRequestDispatcher("CuaHang/ch_sach.jsp");
+                break;
             default:
                 request.setAttribute("listch", cuaHangDAO.getALl());
 

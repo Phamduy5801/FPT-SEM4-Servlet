@@ -1,5 +1,6 @@
 package com.example.Servlet.DAO;
 
+import com.example.Servlet.Models.CuaHang;
 import com.example.Servlet.Models.SachNhap;
 
 import java.sql.*;
@@ -94,19 +95,20 @@ public class SachNhapDAO {
 
     public int getSoLuongSachHienTai(int idSach, int idCuahang){
         int soLuongSachHienTai = 0;
-        Connection con = DBConnect.getConnection();
+
         String sql = "select soLuong from tbl_sach_cua_hang where idSach = ? and idCuahang = ?";
-        PreparedStatement ps = null;
         try {
-            ps = con.prepareStatement(sql);
+            PreparedStatement ps = DBConnect.getConnection().prepareStatement(sql);
             ps.setInt(1,idSach);
             ps.setInt(2,idCuahang);
-            soLuongSachHienTai = ps.executeUpdate();
-            if(ps!=null){
-                ps.close();
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                soLuongSachHienTai = rs.getInt(1);
             }
-        }catch (Exception e){
-            e.printStackTrace();
+            rs.close();
+            ps.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
         return soLuongSachHienTai;
     }

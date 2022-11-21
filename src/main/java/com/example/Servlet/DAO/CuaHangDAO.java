@@ -1,6 +1,7 @@
 package com.example.Servlet.DAO;
 
 import com.example.Servlet.Models.CuaHang;
+import com.example.Servlet.Models.SachCuaHang;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -106,4 +107,30 @@ public class CuaHangDAO {
         }
         return output > 0;
     }
+
+    public List<SachCuaHang> getThongTinSach(int id){
+        List<SachCuaHang> list = new ArrayList<>();
+        String sql = "select a.soLuong, b.ten, c.ten from tbl_sach_cua_hang a " +
+                "inner join tbl_cua_hang b on a.idCuaHang = b.id " +
+                "inner join tbl_sach c on a.idSach = c.id " +
+                "and b.id = ?";
+        try {
+            PreparedStatement ps = DBConnect.getConnection().prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                SachCuaHang sachCuaHang = new SachCuaHang();
+                sachCuaHang.setTenSach(rs.getString(3));
+                sachCuaHang.setTenCuahang(rs.getString(2));
+                sachCuaHang.setSoLuong(rs.getInt(1));
+                list.add(sachCuaHang);
+            }
+            rs.close();
+            ps.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return list;
+    }
+
 }
