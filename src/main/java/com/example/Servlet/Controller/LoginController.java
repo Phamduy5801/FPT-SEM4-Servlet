@@ -23,10 +23,10 @@ public class LoginController  extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userName = request.getParameter("username");
-        String password = request.getParameter("password");
+        String passWord = request.getParameter("password");
         HttpSession session = request.getSession();
         UserDAO uDao = new UserDAO();
-        User user = new User(userName,password);
+        User user = new User(userName,passWord);
         if(uDao.checkLogin(user)){
             System.out.println("Login success");
             session.setAttribute("user", user);
