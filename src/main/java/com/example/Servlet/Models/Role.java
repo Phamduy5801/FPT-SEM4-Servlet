@@ -10,9 +10,10 @@ public class Role {
     public Role() {
     }
 
-    public Role(int id, String name) {
+    public Role(int id, String name, List<Role> roles) {
         this.id = id;
         this.name = name;
+        this.roles = roles;
     }
 
     public int getId() {

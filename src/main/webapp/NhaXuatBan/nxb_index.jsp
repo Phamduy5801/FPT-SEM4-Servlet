@@ -1,5 +1,6 @@
 <%@ page import="com.example.Servlet.Models.NhaXuatBan" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%--
   Created by IntelliJ IDEA.
   User: Admin
   Date: 11/7/2022
@@ -8,7 +9,7 @@
 --%>
     <%@ include file="/partials/header.jsp" %>
 <div class="container" style="margin-bottom: 10px">
-    <h3 style="margin-bottom: 10px">NHA XUAT BAN</h3>
+    <h3 style="margin-bottom: 10px">NHA XUAT BAN ${session_role_id}</h3>
 
     <a href="NhaXuatBan?method=new" style="margin-bottom: 10px"><button class="btn btn-primary">Them</button></a>
 </div>

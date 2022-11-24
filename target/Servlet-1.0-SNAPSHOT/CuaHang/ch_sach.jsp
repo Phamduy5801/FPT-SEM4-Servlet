@@ -9,8 +9,6 @@
 <%@ include file="/partials/header.jsp" %>
 <div class="container" style="margin-bottom: 10px">
     <h3 style="margin-bottom: 10px">CUA HANG</h3>
-
-    <a href="CuaHang?method=new" style="margin-bottom: 10px"><button class="btn btn-primary">Them</button></a>
 </div>
 <table class="table table-bordered container " style="width: 80%">
     <thead>

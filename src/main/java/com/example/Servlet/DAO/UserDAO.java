@@ -1,20 +1,22 @@
 package com.example.Servlet.DAO;
 
 import com.example.Servlet.Models.NhaXuatBan;
+import com.example.Servlet.Models.Sach;
 import com.example.Servlet.Models.User;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserDAO {
 
     public boolean add(User user){
-        String sql = "insert into tbl_user(username, password) values(?,?)";
+        String sql = "insert into tbl_user(username, password, role_id) values(?,?,3)";
         int output = -1;
         try {
-//            System.out.println("Username: " + user.getUsername());
             PreparedStatement ps = DBConnect.getConnection().prepareStatement(sql);
             ps.setString(1,user.getUsername());
             ps.setString(2,user.getPassword());
@@ -49,27 +51,25 @@ public class UserDAO {
         return u;
     }
 
-    public boolean checkLogin(User user){
+    public int checkLogin(String ussername, String password){
 
 //        if("sa".equals(user.getUsername()) && "sa".equals(user.getPassword()))
 //            return true;
 //        return false;
-        Boolean output= false;
-        String sql = "select username from tbl_user where username = ? and password = ?";
+        String sql = "select username, role_id from tbl_user where username = ? and password = ?";
         try {
             PreparedStatement ps = DBConnect.getConnection().prepareStatement(sql);
-            ps.setString(1,user.getUsername());
-            ps.setString(2,user.getPassword());
+            ps.setString(1,ussername);
+            ps.setString(2,password);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
-                output= true;
-//                return true;
+                return rs.getInt("role_id");
             }
             rs.close();
             ps.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return output;
+        return 0;
     }
 }

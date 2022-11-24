@@ -1,25 +1,26 @@
 package com.example.Servlet.Models;
 
 import java.util.List;
+import java.util.Objects;
 
 public class User {
 
     private String username,password;
 
-    private List<User> users;
-
     private int role_id;
+
+    private List<User> users;
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    public User(String username, String password, List<User> users, int role_id) {
+    public User(String username, String password, int role_id, List<User> users) {
         this.username = username;
         this.password = password;
-        this.users = users;
         this.role_id = role_id;
+        this.users = users;
     }
 
     public User() {
@@ -41,6 +42,14 @@ public class User {
         this.username = username;
     }
 
+    public int getRole_id() {
+        return role_id;
+    }
+
+    public void setRole_id(int role_id) {
+        this.role_id = role_id;
+    }
+
     public List<User> getUsers() {
         return users;
     }
@@ -49,11 +58,12 @@ public class User {
         this.users = users;
     }
 
-    public int getRole_id() {
-        return role_id;
-    }
-
-    public void setRole_id(int role_id) {
-        this.role_id = role_id;
+    public boolean hasRole(int hasRole) {
+        for(User user : users) {
+            if (user.getRole_id() == hasRole) {
+                return true;
+            }
+        }
+        return false;
     }
 }

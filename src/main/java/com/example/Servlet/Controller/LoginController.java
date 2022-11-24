@@ -27,9 +27,10 @@ public class LoginController  extends HttpServlet {
         HttpSession session = request.getSession();
         UserDAO uDao = new UserDAO();
         User user = new User(userName,passWord);
-        if(uDao.checkLogin(user)){
-            System.out.println("Login success");
-            session.setAttribute("user", user);
+        int role_id = uDao.checkLogin(userName, passWord);
+        if(role_id != 0){
+//            System.out.println("Login success");
+            session.setAttribute("session_role_id", role_id);
             RequestDispatcher rs = request.getRequestDispatcher("NhaXuatBan");
             rs.forward(request,response);
         } else {

@@ -24,9 +24,9 @@ public class RegisterController extends HttpServlet {
         if(userDAO.findByUsername(user_test) == null){
             user.setUsername(request.getParameter("username"));
             user.setPassword(request.getParameter("password"));
-            user.setRole_id(3);
-            //todo nhaXuatBanDao.add(nhaXuatBan)
             userDAO.add(user);
+            //todo nhaXuatBanDao.add(nhaXuatBan)
+
             response.sendRedirect("index.jsp");
         } else {
 //            System.out.println("Register failure");
