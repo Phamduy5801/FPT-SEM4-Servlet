@@ -35,7 +35,7 @@
 <h3>Register form</h3>
 <form action="RegisterController" class="form-control" method="post">
     <label>UserName</label>:<input type="text" class="form-control" name="username" required><br/>
-    <label>Password</label>:<input type="text" class="form-control" name="password" required><br/>
+    <label>Password</label>:<input type="password" class="form-control" name="password" required><br/>
     <input type="submit" name="Submit">
 </form>
 <a href="index.jsp">Return to Login form</a>

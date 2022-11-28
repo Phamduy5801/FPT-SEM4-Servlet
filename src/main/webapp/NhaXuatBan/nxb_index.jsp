@@ -7,44 +7,54 @@
   Time: 11:20 PM
   To change this template use File | Settings | File Templates.
 --%>
-    <%@ include file="/partials/header.jsp" %>
-<div class="container" style="margin-bottom: 10px">
-    <h3 style="margin-bottom: 10px">NHA XUAT BAN ${session_role_id}</h3>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-    <a href="NhaXuatBan?method=new" style="margin-bottom: 10px"><button class="btn btn-primary">Them</button></a>
-</div>
-<table class="table table-bordered container " style="width: 80%">
-    <thead>
-    <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Name</th>
-        <th scope="col">Address</th>
-        <th scope="col">Telephone</th>
-        <th scope="col">Fax</th>
-        <th scope="col">Action</th>
-    </tr>
-    </thead>
-    <tbody>
-<%--    <%--%>
-<%--        List<NhaXuatBan> list = (List<NhaXuatBan>) request.getAttribute("listnxb");--%>
-<%--        for(NhaXuatBan n: list){--%>
-<%--    %>--%>
-    <c:forEach var = "nxb" items="${listnxb}" >
-    <tr>
-            <td>${nxb.getId()}</td>
-            <td>${nxb.getTen()}</td>
-            <td>${nxb.getDiachi()}</td>
-            <td>${nxb.getSdt()}</td>
-            <td>${nxb.getSofax()}</td>
-            <td width="30%">
-                <a href="NhaXuatBan?method=detail&nxb_id=${nxb.id}"><button  class="btn btn-info">Chi Tiet</button></a>
-                <a href="NhaXuatBan?method=edit&nxb_id=${nxb.id}"><button  class="btn btn-primary">Sua</button></a>
-                <a href="NhaXuatBan?method=delete&nxb_id=${nxb.id}" ><button class="btn btn-danger">Xoa</button></a>
-            </td>
-    </tr>
-    </c:forEach>
-    </tbody>
-</table>
+<c:if test="${session_role_id!=null}" >
+    <%@ include file="/partials/header.jsp" %>
+
+    <div class="container" style="margin-bottom: 10px">
+        <h3 style="margin-bottom: 10px">NHA XUAT BAN ${session_role_id}</h3>
+
+        <a href="NhaXuatBan?method=new" style="margin-bottom: 10px"><button class="btn btn-primary">Them</button></a>
+    </div>
+    <table class="table table-bordered container " style="width: 80%">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Telephone</th>
+            <th scope="col">Fax</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+            <%--    <%--%>
+            <%--        List<NhaXuatBan> list = (List<NhaXuatBan>) request.getAttribute("listnxb");--%>
+            <%--        for(NhaXuatBan n: list){--%>
+            <%--    %>--%>
+        <c:forEach var = "nxb" items="${listnxb}" >
+            <tr>
+                <td>${nxb.getId()}</td>
+                <td>${nxb.getTen()}</td>
+                <td>${nxb.getDiachi()}</td>
+                <td>${nxb.getSdt()}</td>
+                <td>${nxb.getSofax()}</td>
+                <td width="30%">
+                    <a href="NhaXuatBan?method=detail&nxb_id=${nxb.id}"><button  class="btn btn-info">Chi Tiet</button></a>
+                    <a href="NhaXuatBan?method=edit&nxb_id=${nxb.id}"><button  class="btn btn-primary">Sua</button></a>
+                    <a href="NhaXuatBan?method=delete&nxb_id=${nxb.id}" ><button class="btn btn-danger">Xoa</button></a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</c:if>
+
+<c:if test="${session_role_id==null}" >
+    <h1>Ban chua dang nhap</h1>
+    <a href="index.jsp" style="text-decoration: none">Return to Login form</a>
+</c:if>
 
 </body>
 </html>

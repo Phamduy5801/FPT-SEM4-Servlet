@@ -31,7 +31,13 @@ public class LoginController  extends HttpServlet {
         if(role_id != 0){
 //            System.out.println("Login success");
             session.setAttribute("session_role_id", role_id);
-            RequestDispatcher rs = request.getRequestDispatcher("NhaXuatBan");
+            RequestDispatcher rs = null;
+            if (role_id == 1){
+                 rs = request.getRequestDispatcher("NhaXuatBan");
+            }else if(role_id == 3 ){
+                 rs = request.getRequestDispatcher("index_customer.jsp");
+            }
+
             rs.forward(request,response);
         } else {
             System.out.println("Login failure");
