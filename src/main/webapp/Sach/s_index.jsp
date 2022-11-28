@@ -11,7 +11,7 @@
 --%>
 <%@ include file="/partials/header.jsp" %>
 <body>
-<c:if test="${session_role_id == 1 || session_role_id == 2}">
+<%--<c:if test="${session_role_id == 1 || session_role_id == 2}">--%>
     <div class="container" style="margin-bottom: 10px">
         <h3 style="margin-bottom: 10px">Sach</h3>
         <a href="Sach?method=new" style="margin-bottom: 10px"><button class="btn btn-primary">Them</button></a>
@@ -50,11 +50,11 @@
         </c:forEach>
         </tbody>
     </table>
-</c:if>
+<%--</c:if>--%>
 
-<c:if test="${session_role_id != 1 && session_role_id != 2}">
-    <h1 style="margin-top: 10px">You don't have permission</h1>
-</c:if>
+<%--<c:if test="${session_role_id != 1 && session_role_id != 2}">--%>
+<%--    <h1 style="margin-top: 10px">You don't have permission</h1>--%>
+<%--</c:if>--%>
 
 </body>
 </html>

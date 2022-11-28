@@ -41,18 +41,20 @@
             <li class="nav-item">
                 <a class="nav-link" href="TheLoaiSach">TLS</a>
             </li>
+            <c:if test="${session_role_id == 1 || session_role_id == 2}">
             <li class="nav-item">
                 <a class="nav-link" href="Sach">Sach</a>
             </li>
+            </c:if>
             <li class="nav-item">
                 <a class="nav-link" href="CuaHang">Cua Hang</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="SachNhap">Nhap Sach</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="Role">Role</a>
-            </li>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link" href="Role">Role</a>--%>
+<%--            </li>--%>
         </ul>
     </div>
     <form action="LogoutController" class="form-control" method="post" style="float: right; width: 100px; height: auto; display: flex; justify-content: center">
