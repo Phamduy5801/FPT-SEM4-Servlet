@@ -5,6 +5,7 @@ import com.example.Servlet.DAO.SachDaO;
 import com.example.Servlet.DAO.TheLoaiSachDAO;
 import com.example.Servlet.Models.NhaXuatBan;
 import com.example.Servlet.Models.Sach;
+import com.example.Servlet.Models.User;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -29,6 +30,7 @@ public class SachController extends HttpServlet {
         NhaXuatBanDao nhaXuatBanDao = new NhaXuatBanDao();
         TheLoaiSachDAO theLoaiSachDAO = new TheLoaiSachDAO();
         NhaXuatBan nhaXuatBan = new NhaXuatBan();
+        User user = new User();
         RequestDispatcher rs;
         switch (method) {
             case "new":
@@ -55,7 +57,6 @@ public class SachController extends HttpServlet {
                 break;
             default:
                 request.setAttribute("listsach", sachDaO.getALl());
-
                 rs = request.getRequestDispatcher("Sach/s_index.jsp");
         }
         rs.forward(request, response);
@@ -76,6 +77,7 @@ public class SachController extends HttpServlet {
                 b.setNxb_id(Integer.parseInt(request.getParameter("nxb_id")));
                 b.setTheloai_id(Integer.parseInt(request.getParameter("tls_id")));
                 b.setGiaban(Float.parseFloat(request.getParameter("giaban")));
+                b.setDuongdananh(request.getParameter("duongdananh"));
                 bookDao.add(b);
                 break;
             case "update":

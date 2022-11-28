@@ -25,6 +25,7 @@
             <th scope="col">The loai</th>
             <th scope="col">Nha Xuat Ban</th>
             <th scope="col">Gia ban</th>
+            <th scope="col">Duong dan anh</th>
 
         </tr>
         </thead>
@@ -39,6 +40,7 @@
                 <td>${s.getTen_theloai()}</td>
                 <td>${s.getTen_nxb()}</td>
                 <td>${s.getGiaban()}</td>
+                <td><img src="${s.getDuongdananh()}" alt="Lamp" width="40%"/> </td>
                 <td width="30%">
 
                     <a href="Sach?method=detail&sach_id=${s.getId()}"><button  class="btn btn-info">Chi Tiet</button></a>

@@ -13,7 +13,7 @@ import java.util.List;
 public class SachDaO {
     public List<Sach> getALl(){
         List<Sach> list = new ArrayList<>();
-        String sql = "select s.id,s.ten,s.tacgia,nxb.name_nxb ,tls.ten ,s.price " +
+        String sql = "select s.id,s.ten,s.tacgia,nxb.name_nxb ,tls.ten ,s.price, s.duongdananh " +
                 "from tbl_nha_xuat_ban nxb, tbl_sach s, tbl_the_loai_sach tls " +
                 "where nxb.id = s.id_nha_xuat_ban and tls.id = s.id_nha_xuat_ban";
         try {
@@ -27,6 +27,7 @@ public class SachDaO {
                 n.setTen_nxb(rs.getString(4));
                 n.setTen_theloai(rs.getString(5));
                 n.setGiaban(rs.getFloat(6));
+                n.setDuongdananh(rs.getString(7));
                 list.add(n);
             }
             rs.close();
@@ -38,7 +39,7 @@ public class SachDaO {
     }
     public boolean add(Sach book){
         Connection con = DBConnect.getConnection();
-        String sql = "insert into tbl_sach(ten,tacgia,id_the_loai, id_nha_xuat_ban,price) values(?,?,?,?,?)";
+        String sql = "insert into tbl_sach(ten,tacgia,id_the_loai, id_nha_xuat_ban,price, duongdananh) values(?,?,?,?,?,?)";
         PreparedStatement ps = null;
         int output = -1;
         try {
@@ -48,6 +49,7 @@ public class SachDaO {
             ps.setInt(3,book.getTheloai_id());
             ps.setInt(4,book.getNxb_id());
             ps.setFloat(5,book.getGiaban());
+            ps.setString(6,book.getDuongdananh());
             output = ps.executeUpdate();
             if(ps!=null){
                 ps.close();

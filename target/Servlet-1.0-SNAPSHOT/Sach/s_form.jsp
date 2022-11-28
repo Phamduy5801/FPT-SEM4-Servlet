@@ -43,6 +43,10 @@
             <label>Gia tien: </label>
             <input type="text" class="form-control" id="price" name="giaban">
         </div>
+        <div class="form-group">
+            <label>Duong dan anh:  </label>
+            <input type="text" class="form-control" id="duongdananh" name="duongdananh">
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

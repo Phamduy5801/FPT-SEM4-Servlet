@@ -40,7 +40,7 @@
 <%--<a href="register-form.jsp">Register</a>--%>
 <form action="LoginController" class="form-control" method="post">
     <label>UserName</label>:<input type="text" class="form-control" name="username" required><br/>
-    <label>Password</label>:<input type="text" class="form-control" name="password" required><br/>
+    <label>Password</label>:<input type="password" class="form-control" name="password" required><br/>
     <input type="submit" name="Submit">
     <a href="register-form.jsp">Register</a>
 </form>

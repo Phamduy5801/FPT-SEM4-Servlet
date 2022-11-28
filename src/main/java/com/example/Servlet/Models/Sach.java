@@ -6,11 +6,11 @@ public class Sach {
     private int theloai_id, nxb_id;
     private String ten_theloai, ten_nxb;
     private float giaban;
+    private String duongdananh;
 
     public Sach() {
     }
-
-    public Sach(int id, String ten, String tacgia, int theloai_id, int nxb_id, String ten_theloai, String ten_nxb, float giaban) {
+    public Sach(int id, String ten, String tacgia, int theloai_id, int nxb_id, String ten_theloai, String ten_nxb, float giaban, String duongdananh) {
         this.id = id;
         this.ten = ten;
         this.tacgia = tacgia;
@@ -19,6 +19,7 @@ public class Sach {
         this.ten_theloai = ten_theloai;
         this.ten_nxb = ten_nxb;
         this.giaban = giaban;
+        this.duongdananh = duongdananh;
     }
 
     public int getId() {
@@ -83,5 +84,13 @@ public class Sach {
 
     public void setTen_nxb(String ten_nxb) {
         this.ten_nxb = ten_nxb;
+    }
+
+    public String getDuongdananh() {
+        return duongdananh;
+    }
+
+    public void setDuongdananh(String duongdananh) {
+        this.duongdananh = duongdananh;
     }
 }
